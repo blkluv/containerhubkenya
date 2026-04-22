@@ -996,61 +996,70 @@ footer {
       </div>
     </div>
 
-    <div class="quote-form">
-      <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;text-transform:uppercase;margin-bottom:24px;letter-spacing:0.02em;">Request a Quote</h3>
-      <div class="form-row">
+<form class="quote-form" action="https://formsubmit.co/buy@shipncontainer.com" method="POST">
+    <!-- Optional: redirect after submit (create a thank-you page or leave blank to show default success page) -->
+    <input type="hidden" name="_next" value="https://shipncontainer.com/thank-you.html">
+    <!-- Disable the default captcha (you can remove this line if you want spam protection) -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;text-transform:uppercase;margin-bottom:24px;letter-spacing:0.02em;">Request a Quote</h3>
+    
+    <div class="form-row">
         <div class="form-group">
-          <label>Full Name *</label>
-          <input type="text" placeholder="John Smith">
+            <label>Full Name *</label>
+            <input type="text" name="name" placeholder="John Smith" required>
         </div>
         <div class="form-group">
-          <label>Phone Number *</label>
-          <input type="tel" placeholder="+1 (404) 555-XXXX">
+            <label>Phone Number *</label>
+            <input type="tel" name="phone" placeholder="+1 (404) 555-XXXX" required>
         </div>
-      </div>
-      <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" placeholder="john@example.com">
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Container Type *</label>
-          <select>
-            <option value="">Select type…</option>
-            <option>20ft Standard — New</option>
-            <option>20ft Standard — Used</option>
-            <option>40ft Standard — New</option>
-            <option>40ft High Cube — New</option>
-            <option>40ft Standard — Used</option>
-            <option>20ft Site Office (Refurb)</option>
-            <option>40ft Ablution Unit (Refurb)</option>
-            <option>Custom Modification</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Quantity</label>
-          <select>
-            <option>1 unit</option>
-            <option>2–5 units</option>
-            <option>6–10 units</option>
-            <option>10+ units</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Delivery Location</label>
-        <input type="text" placeholder="e.g. Downtown, Atlanta">
-      </div>
-      <div class="form-group">
-        <label>Additional Requirements</label>
-        <textarea placeholder="Describe any modifications, timeline, or special requirements…"></textarea>
-      </div>
-      <button class="btn-primary" style="width:100%;justify-content:center;margin-top:8px;" onclick="handleQuote()">
-        Submit Quote Request →
-      </button>
     </div>
-  </div>
-</section>
+    
+    <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="john@example.com" required>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label>Container Type *</label>
+            <select name="container_type" required>
+                <option value="">Select type…</option>
+                <option>20ft Standard — New</option>
+                <option>20ft Standard — Used</option>
+                <option>40ft Standard — New</option>
+                <option>40ft High Cube — New</option>
+                <option>40ft Standard — Used</option>
+                <option>20ft Site Office (Refurb)</option>
+                <option>40ft Ablution Unit (Refurb)</option>
+                <option>Custom Modification</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Quantity</label>
+            <select name="quantity">
+                <option>1 unit</option>
+                <option>2–5 units</option>
+                <option>6–10 units</option>
+                <option>10+ units</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label>Delivery Location</label>
+        <input type="text" name="location" placeholder="e.g. Downtown, Atlanta">
+    </div>
+    
+    <div class="form-group">
+        <label>Additional Requirements</label>
+        <textarea name="message" placeholder="Describe any modifications, timeline, or special requirements…"></textarea>
+    </div>
+    
+    <button type="submit" class="btn-primary" style="width:100%;justify-content:center;margin-top:8px;">
+        Submit Quote Request →
+    </button>
+</form>
 
 <!-- PORTFOLIO -->
 <section id="portfolio">
